@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+
+    <!-- Bootstrap -->
+    <!--Compiled and minified CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--jQuery CDN-->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+    <!--Compiled and minified JavaScript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>Oconee County Fire Rescue</h1>
+    </header>
+    <nav class="navbar navbar-dark bg-dark"> <!--taken from bootstrap-->
+      <ul class="nav navbar-nav">
+              <li><a class="black" href="index.html">Home</a></li>
+              <li><a class="black" href="about.html">About</a></li>
+              <li><a class="black" href="reports.html">Reports</a></li>
+      </ul>
+    </nav>
+
+    <!-- content goes here -->
+        <table class="table table-sm table-hover">
+          <thead>
+            <tr>
+              <th>First</th>
+              <th>Last</th>
+              <th>Radio Number</th>
+              <th>Station Number</th>
+              <th>Active?</th>
+              <th>Certification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="p in patients" @click="handleRowClick(p)">
+              <td>{{ p.patientGuid }}</td>
+              <td>{{ p.firstName }}</td>
+              <td>{{ p.lastName }}</td>
+              <td>{{ p.dob }}</td>
+              <td>{{ p.sexAtBirth }}</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+      <form>
+
+      </form>
+
+  </body>
+
+  <footer></footer>
+</html>
