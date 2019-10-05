@@ -29,5 +29,26 @@ a:hover {
 
 .black {
   color: black;
-  background-color: rgb(218, 182, 73);
+  background-color: rgb(241, 183, 70);
+  font-size: 30px;
+}
+
+.goldbg {
+  background-color: rgb(241, 183, 70);
+  width: 100%;
+  font-family: monospace;
+}
+
+form {
+  border-top-style: double;
+  border-top-color: red;
+  padding: 20px;
+}
+
+thead {
+  background-color: lightgrey;
+}
+
+tr:hover {
+  color: red;
 }
