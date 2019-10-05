@@ -1,0 +1,16 @@
+
+h1 {
+  font-family: monospace;
+  font-weight: bold;
+  color: red;
+  background-color: rgb(62, 63, 66);
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+.black {
+  color: black;
+  background-color: rgb(218, 182, 73);
+}
