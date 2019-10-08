@@ -37,7 +37,7 @@ CREATE TABLE personStation (
 
 
 INSERT INTO person (personID, firstName, lastName, position, gender, address, workPhone, mobilePhone, radioNumber, isActive)
-	VALUES("1", "Kathryn", "Pryde", "Female", "Chief", "1123 Xavier School Drive, Wtkinsville, GA 30677", "707-555-1234", "707-555-2345", "A-1", "1");
+	VALUES("1", "Kathryn", "Pryde", "Female", "Chief", "1123 Xavier School Drive, Watkinsville, GA 30677", "707-555-1234", "707-555-2345", "A-1", "1");
 INSERT INTO person (personID, firstName, lastName, position, gender, address, workPhone, mobilePhone, radioNumber, isActive)
 	VALUES("2", "Piotr", "Rasputin", "Male", NULL, "A31 Mother Russia Road, Seattle, WA 98133", NULL, "206-555-9876", "841", "1");
 INSERT INTO person (personID, firstName, lastName, position, gender, address, workPhone, mobilePhone, radioNumber, isActive)
