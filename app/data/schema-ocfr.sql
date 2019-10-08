@@ -18,8 +18,6 @@ CREATE TABLE person (
 CREATE TABLE station (
     stationNumber INTEGER NOT NULL PRIMARY KEY
 );
-USE ocfr;
-SELECT * FROM personCert;
 CREATE TABLE personCert (
 	personId VARCHAR(60),
     certId VARCHAR(60),
