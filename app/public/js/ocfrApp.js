@@ -51,6 +51,7 @@ var ocfrApp = new Vue({
         firstName: '',
         lastName: '',
         position: '',
+        station:'',
         gender:'',
         address: '',
         workPhone:'',

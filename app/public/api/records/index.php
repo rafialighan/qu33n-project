@@ -4,13 +4,13 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-if (isset($_GET['guid'])) {
-  $stmt = $db->prepare('SELECT * FROM Patient WHERE patientGuid = ?');
-  $stmt->execute([$_GET['guid']]);
+if (isset($_GET['personId'])) {
+  $stmt = $db->prepare('SELECT * FROM person WHERE personId = ?');
+  $stmt->execute([$_GET['personId']]);
 } else {
-$stmt = $db->prepare('SELECT * FROM Patient');
+$stmt = $db->prepare('SELECT * FROM person');
 $stmt->execute();
-$patients = $stmt->fetchAll();
+$persons = $stmt->fetchAll();
 }
 // patientGuid VARCHAR(64) PRIMARY KEY,
 // firstName VARCHAR(64),
@@ -19,7 +19,7 @@ $patients = $stmt->fetchAll();
 // sexAtBirth CHAR(1) DEFAULT ''
 
 // Step 3: Convert to JSON
-$json = json_encode($patients, JSON_PRETTY_PRINT);
+$json = json_encode($persons, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');

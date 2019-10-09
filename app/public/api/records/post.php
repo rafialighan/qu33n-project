@@ -1,22 +1,21 @@
 <?php
 
-use Ramsey\Uuid\Uuid;
-$personId = Uuid::uuid4()->toString();
 // Step 1: Get a datase connection from our help class
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
   'INSERT INTO person
-    (personID, firstName, lastName, position, gender, address, workPhone, mobilePhone, radioNumber, isActive)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+    (personId, firstName, lastName, position, station, gender, address, workPhone, mobilePhone, radioNumber, isActive)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
 );
 
 $stmt->execute([
-  $guid,
+  $personId,
   $_POST['firstName'],
   $_POST['lastName'],
   $_POST['position'],
+  $_POST['station'],
   $_POST['gender'],
   $_POST['address'],
   $_POST['workPhone'],
@@ -27,4 +26,4 @@ $stmt->execute([
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../records/?personId='.$personId);
+// header('Location: ../records/?personId='.$personId);
