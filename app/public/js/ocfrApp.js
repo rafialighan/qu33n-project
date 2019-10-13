@@ -38,16 +38,16 @@ var ocfrApp = new Vue({
         }
       })
       .then( response => response.json() )
-      .then( json => {ocfrApp.persons.push = json[0]})
+      .then( json => {ocfrApp.persons.push ( json[0])})
       .catch( err=>{
         console.error('RECORD POST ERROR:');
         console.error(err);
       });
-      this.persons.push( this.recordPerson );
       this.handleReset();
     },
     handleReset() {
       this.recordPerson = {
+        personID:'',
         firstName: '',
         lastName: '',
         position: '',
@@ -58,8 +58,8 @@ var ocfrApp = new Vue({
         mobilePhone:'',
         radioNumber:'',
         stationNumber:'',
-        isActive: '',
-        certification:''
+        isActive: ''
+        // certification:''
       }
     },
     // handleRowClick(person) {
