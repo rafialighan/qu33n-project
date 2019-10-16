@@ -38,7 +38,6 @@ var ocfrApp = new Vue({
         workPhone:'',
         mobilePhone:'',
         radioNumber:'',
-        stationNumber:'',
         isActive: ''
         // certification:''
       }

@@ -48,7 +48,6 @@
                   <th>Work Phone</th>
                   <th>Mobile Phone</th>
                   <th>Radio Number</th>
-                  <th>Station Number</th>
                   <th>Active?</th>
                   <!-- <th>Certification</th> -->
                 </tr>
@@ -98,58 +97,58 @@
             </div>
 
             <div class="form-group row">
-              <label for="inputDob" class="col-sm-2 col-form-label">Position</label>
+              <label for="inputPosition" class="col-sm-2 col-form-label">Position</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="ocfrPosition" placeholder="position" v-model="person.position">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="inputSexAtBirth" class="col-sm-2 col-form-label">Station Number</label>
+              <label for="inputStation" class="col-sm-2 col-form-label">Station Number</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="ocfrStation" placeholder="Station Number" v-model="person.station">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="inputSexAtBirth" class="col-sm-2 col-form-label">Gender</label>
+              <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="ocfrGender" placeholder="Male|Female" v-model="person.gender">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="inputSexAtBirth" class="col-sm-2 col-form-label">Address</label>
+              <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="ocfrAddress" placeholder="Address" v-model="person.address">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="inputSexAtBirth" class="col-sm-2 col-form-label">Work Phone</label>
+              <label for="inputWorkPhone" class="col-sm-2 col-form-label">Work Phone</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="ocfrWorkPhone" placeholder="Work Phone" v-model="person.workPhone">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="inputSexAtBirth" class="col-sm-2 col-form-label">Mobile Phone</label>
+              <label for="inputMobilePhone" class="col-sm-2 col-form-label">Mobile Phone</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="ocfrMobilePhone" placeholder="Mobile Phone" v-model="person.mobilePhone">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="inputSexAtBirth" class="col-sm-2 col-form-label">Radio Number</label>
+              <label for="inputRadioNumber" class="col-sm-2 col-form-label">Radio Number</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="ocfrRadioNumber" placeholder="Radio Number" v-model="person.radioNumber">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="inputSexAtBirth" class="col-sm-2 col-form-label">Status</label>
+              <label for="inputActive" class="col-sm-2 col-form-label">Active?</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="ocfrStatus" placeholder="Status" v-model="person.isActive">
+                <input type="text" class="form-control" id="ocfrStatus" placeholder="Yes|No" v-model="person.isActive">
               </div>
             </div>
 
@@ -168,5 +167,4 @@
     <script src="js/ocfrApp.js"></script>
   </body>
 
-  <footer></footer>
 </html>

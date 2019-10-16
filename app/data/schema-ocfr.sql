@@ -16,7 +16,6 @@ CREATE TABLE person (
     radioNumber VARCHAR (60) NOT NULL,
     isActive VARCHAR (3)
 );
-USE ocfr;
 CREATE TABLE personCert (
 	personId VARCHAR(60),
     certId VARCHAR(60),
@@ -27,11 +26,12 @@ CREATE TABLE personCert (
     FOREIGN KEY (certId) REFERENCES certification(certId)
 );
 
-INSERT INTO person (personID, firstName, lastName, position, station, gender, address, workPhone, mobilePhone, radioNumber, isActive)
+
+INSERT INTO person (personId, firstName, lastName, position, station, gender, address, workPhone, mobilePhone, radioNumber, isActive)
 	VALUES("1", "Kathryn", "Pryde", "Chief", "All",  "Female", "1123 Xavier School Drive, Wtkinsville, GA 30677", "707-555-1234", "707-555-2345", "A-1", "Yes");
-INSERT INTO person (personID, firstName, lastName, position, station, gender, address, workPhone, mobilePhone, radioNumber, isActive)
+INSERT INTO person (personId, firstName, lastName, position, station, gender, address, workPhone, mobilePhone, radioNumber, isActive)
 	VALUES("2", "Piotr", "Rasputin", NULL, "8", "Male", "A31 Mother Russia Road, Seattle, WA 98133", NULL, "206-555-9876", "841", "Yes");
-INSERT INTO person (personID, firstName, lastName, position, station, gender, address, workPhone, mobilePhone, radioNumber, isActive)
+INSERT INTO person (personId, firstName, lastName, position, station, gender, address, workPhone, mobilePhone, radioNumber, isActive)
 	VALUES("3", "Warren", "Worthington III", NULL, "1", "Male", "1140 Experiment Station Rd, Watkinsville, GA", "(706) 555-3945", NULL, "122", "Yes");
 
 INSERT INTO certification (certId, agency, certType)

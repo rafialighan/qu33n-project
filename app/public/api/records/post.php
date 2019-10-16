@@ -11,7 +11,7 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
-  $personId,
+  $_POST['personId'],
   $_POST['firstName'],
   $_POST['lastName'],
   $_POST['position'],
@@ -26,5 +26,5 @@ $stmt->execute([
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../records/');
+header('Location: ../records/?'.$db);
 // header('Location: ../records/?personId='.$personId);
