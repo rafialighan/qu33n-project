@@ -42,8 +42,8 @@
         <table class="table table-sm table-hover">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Certificate ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
               <!-- <th>Last</th> -->
               <!-- <th>Position</th>
               <th>Gender</th>
@@ -58,8 +58,8 @@
           </thead>
           <tbody>
             <tr v-for="c in certificates" @click="handleRowClick(c)">
-              <td>{{ c.personId }}</td>
-              <td>{{ c.certId }}</td>
+              <td>{{ c.firstName }}</td>
+              <td>{{ c.lastName }}</td>
               <!-- <td>{{ c.lastName }}</td> -->
               <!-- <td>{{ p.position }}</td>
               <td>{{ p.gender }}</td>
@@ -73,6 +73,7 @@
             </tr>
           </tbody>
         </table>
+      </div>
 
         <!-- <h2>Member</h2>
         <div class="input-group mb-3">

@@ -2,7 +2,10 @@ var ocfrApp = new Vue({
   el: '#ocfrPersonApp',
   data: {
     persons: [],
-    recordPerson: {}
+    recordPerson: {},
+    filter: {
+      station: ''
+    }
   },
   methods: {
     fetchPeople() {
@@ -42,6 +45,15 @@ var ocfrApp = new Vue({
         // certification:''
       }
     },
+    handleDelete(event) {
+      fetch('api/records/delete.php', {
+        method:'POST',
+        body: JSON.stringify(this.persons),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+    },
     // handleRowClick(person) {
     //   patientTriageApp.patient = patient;
     // }
@@ -49,5 +61,6 @@ var ocfrApp = new Vue({
   created() {
     this.handleReset();
     this.fetchPeople();
+    this.handleDelete();
   }
 });
