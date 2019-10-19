@@ -31,7 +31,7 @@
     </nav>
 
     <!-- content goes here -->
-    <div id="ocfrPersonApp">
+    <div id="certificate">
       <h2>Certificates</h2>
       <div class="input-group mb-3">
         <input type="text" class="form-control"  placeholder="Certification" aria-label="Certification" aria-describedby="basic-addon2">
@@ -43,38 +43,38 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>First</th>
-              <th>Last</th>
-              <th>Position</th>
+              <th>Certificate ID</th>
+              <!-- <th>Last</th> -->
+              <!-- <th>Position</th>
               <th>Gender</th>
               <th>Address</th>
               <th>Work Phone</th>
               <th>Mobile Phone</th>
               <th>Radio Number</th>
               <th>Station Number</th>
-              <th>Active?</th>
+              <th>Active?</th> -->
               <th>Certification</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="p in persons" @click="handleRowClick(p)">
-              <td>{{ p.personId }}</td>
-              <td>{{ p.firstName }}</td>
-              <td>{{ p.lastName }}</td>
-              <td>{{ p.position }}</td>
+            <tr v-for="c in certificates" @click="handleRowClick(c)">
+              <td>{{ c.personId }}</td>
+              <td>{{ c.certId }}</td>
+              <!-- <td>{{ c.lastName }}</td> -->
+              <!-- <td>{{ p.position }}</td>
               <td>{{ p.gender }}</td>
               <td>{{ p.address }}</td>
               <td>{{ p.workPhone }}</td>
               <td>{{ p.mobilePhone }}</td>
               <td>{{ p.radioNumber }}</td>
               <td>{{ p.stationNumber }}</td>
-              <td>{{ p.status}}</td>
-              <td>{{ p.certification }}</td>
+              <td>{{ p.status}}</td> -->
+              <td>{{ c.certType }}</td>
             </tr>
           </tbody>
         </table>
 
-        <h2>Member</h2>
+        <!-- <h2>Member</h2>
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Member's Name" aria-label="Member's Name" aria-describedby="basic-addon2">
           <div class="input-group-append">
@@ -117,12 +117,12 @@
             </tr>
           </tbody>
         </table>
-      </div>
+      </div> -->
       <br>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/ocfrApp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="js/cert.js"></script>
   </body>
 
   <footer></footer>
