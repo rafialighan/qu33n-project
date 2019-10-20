@@ -31,7 +31,7 @@ var ocfrApp = new Vue({
     },
     handleReset() {
       this.recordPerson = {
-        personID:'',
+        personId:'',
         firstName: '',
         lastName: '',
         position: '',

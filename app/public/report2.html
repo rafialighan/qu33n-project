@@ -33,47 +33,45 @@
     <h2>Member Reports</h2>
     <div class="container" id="ocfrPersonApp">
       <div class="row">
-      <div id="mainContent" class="col-md">
-        <div >
-          <div class="filter">
-          <select v-model="filter.station">
-            <option value="">(all)</option>
-            <option>All</option>
-            <option>1</option>
-            <option>8</option>
-          </select>
+        <div id="mainContent" class="col-md">
+          <div >
+            <div class="filter">
+              <select v-model="filter.station">
+                <option value="">(all)</option>
+                <option>All</option>
+                <option>1</option>
+                <option>8</option>
+              </select>
+            </div>
+            <table id="report2" class="table table-sm table-hover">
+              <thead>
+                <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Station</th>
+                  <th>Radio Number</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="p in persons" @click="handleRowClick(p)" v-if="filter.station=='' || p.station==filter.station">
+                  <td>{{ p.firstName }}</td>
+                  <td>{{ p.lastName }}</td>
+                  <td>{{ p.station }}</td>
+                  <td>{{ p.radioNumber}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-    <table id="report2" class="table table-sm table-hover">
-      <thead>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Station</th>
-          <th>Radio Number</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="p in persons" @click="handleRowClick(p)" v-if="filter.station=='' || p.station==filter.station">
-          <td>{{ p.firstName }}</td>
-          <td>{{ p.lastName }}</td>
-          <td>{{ p.station }}</td>
-          <td>{{ p.radioNumber}}</td>
-        </tr>
-      </tbody>
-    </table>
-</div>
-</div>
-</div>
-</div>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/ocfrApp.js"></script>
-
-    </body>
-
     <script src='js/tablesort.min.js'></script>
     <script>
       new Tablesort(document.getElementById('report2'));
     </script>
+    </body>
 
-    </html>
+</html>

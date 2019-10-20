@@ -5,21 +5,16 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'DELETE FROM person WHERE personId = ?'
+  'INSERT INTO personCert
+    (personId, certId, renewDate, expireDate)
+  VALUES (?, ?, ?, ?)'
 );
 
 $stmt->execute([
   $_POST['personId'],
-  $_POST['firstName'],
-  $_POST['lastName'],
-  $_POST['position'],
-  $_POST['station'],
-  $_POST['gender'],
-  $_POST['address'],
-  $_POST['workPhone'],
-  $_POST['mobilePhone'],
-  $_POST['radioNumber']
-  $_POST['isActive']
+  $_POST['certId'],
+  $_POST['renewDate'],
+  $_POST['expireDate']
 ]);
 
 // Step 4: Output
