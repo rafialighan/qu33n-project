@@ -5,7 +5,8 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'DELETE FROM person WHERE personId = ?'
+  'DELETE  FROM personCert WHERE personId = ?;
+  DELETE FROM person WHERE personId = ?;'
 );
 
 $stmt->execute([
