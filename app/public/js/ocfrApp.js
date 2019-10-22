@@ -45,14 +45,25 @@ var ocfrApp = new Vue({
         // certification:''
       }
     },
-    handleDelete(event) {
+    handleDelete(personId) {
       fetch('api/records/delete.php', {
         method:'POST',
-        body: JSON.stringify(this.persons),
+        body: JSON.stringify({"personId":personId}),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
       })
+      .then( function(response) {
+        ocfrApp.persons = ocfrApp.persons.filter(function(el) {return el.personId != personId}
+      );
+      })
+      // .then( response => response.json() )
+      // .then( json => {ocfrApp.persons.push ( json[0])})
+      .catch( err=>{
+        console.error('RECORD POST ERROR:');
+        console.error(err);
+      });
+      this.handleReset();
     },
     // handleRowClick(person) {
     //   patientTriageApp.patient = patient;
@@ -61,6 +72,5 @@ var ocfrApp = new Vue({
   created() {
     this.handleReset();
     this.fetchPeople();
-    this.handleDelete();
   }
 });
