@@ -65,9 +65,9 @@ var ocfrApp = new Vue({
       });
       this.handleReset();
     },
-    // handleRowClick(person) {
-    //   patientTriageApp.patient = patient;
-    // }
+    handleRowClick(persons) {
+      editPerson.person = person;
+    }
   }, // end methods
   created() {
     this.handleReset();
