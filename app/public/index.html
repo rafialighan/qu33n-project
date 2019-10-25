@@ -153,74 +153,76 @@
   </div>
   <div id="editPerson">
           <noscript>This page REQUIRES Javascript</noscript>
+          <h2>Edit Record</h2>
+          <h8>Click on a member on the above table to make changes</h8>
           <form @submit.prevent="handleSubmit">
             <div class="form-group row">
               <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="editFirstName" placeholder="First Name" v-model="recordPerson.firstName">
+                <input type="text" class="form-control" id="editFirstName" placeholder="First Name" v-model="person.firstName">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="editLastName" placeholder="Last Name" v-model="recordPerson.lastName">
+                <input type="text" class="form-control" id="editLastName" placeholder="Last Name" v-model="person.lastName">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="inputPosition" class="col-sm-2 col-form-label">Position</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="editPosition" placeholder="position" v-model="recordPerson.position">
+                <input type="text" class="form-control" id="editPosition" placeholder="position" v-model="person.position">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="inputStation" class="col-sm-2 col-form-label">Station Number</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="editStation" placeholder="Station Number" v-model="recordPerson.station">
+                <input type="text" class="form-control" id="editStation" placeholder="Station Number" v-model="person.station">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="editGender" placeholder="Male|Female" v-model="recordPerson.gender">
+                <input type="text" class="form-control" id="editGender" placeholder="Male|Female" v-model="person.gender">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="editAddress" placeholder="Address" v-model="recordPerson.address">
+                <input type="text" class="form-control" id="editAddress" placeholder="Address" v-model="person.address">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="inputWorkPhone" class="col-sm-2 col-form-label">Work Phone</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="editWorkPhone" placeholder="Work Phone" v-model="recordPerson.workPhone">
+                <input type="text" class="form-control" id="editWorkPhone" placeholder="Work Phone" v-model="person.workPhone">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="inputMobilePhone" class="col-sm-2 col-form-label">Mobile Phone</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="editMobilePhone" placeholder="Mobile Phone" v-model="recordPerson.mobilePhone">
+                <input type="text" class="form-control" id="editMobilePhone" placeholder="Mobile Phone" v-model="person.mobilePhone">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="inputRadioNumber" class="col-sm-2 col-form-label">Radio Number</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="editRadioNumber" placeholder="Radio Number" v-model="recordPerson.radioNumber">
+                <input type="text" class="form-control" id="editRadioNumber" placeholder="Radio Number" v-model="person.radioNumber">
               </div>
             </div>
 
 
             <div class="form-group row">
               <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Create Employee Record</button>
+                <button type="submit" class="btn btn-primary">Edit Employee Record</button>
               </div>
             </div>
           </form>
@@ -230,6 +232,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/ocfrApp.js"></script>
+    <script src="js/editApp.js"></script>
   </body>
 
 </html>

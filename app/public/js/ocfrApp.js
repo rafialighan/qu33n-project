@@ -66,7 +66,8 @@ var ocfrApp = new Vue({
       this.handleReset();
     },
     handleRowClick(persons) {
-      editPerson.person = person;
+      editApp.person = persons;
+      console.log(persons);
     }
   }, // end methods
   created() {

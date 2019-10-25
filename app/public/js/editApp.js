@@ -5,7 +5,7 @@ var editApp = new Vue({
   },
   methods: {
     handleSubmit() {
-      fetch('api/records/post.php', {
+      fetch('api/records/edit.php', {
         method: 'POST',
         body: JSON.stringify(this.person),
         headers: {
@@ -13,7 +13,7 @@ var editApp = new Vue({
         }
       })
       .then( response => response.json() )
-      .then( json => {ocfrAppr.persons = json})
+      .then( json => {editApp.person = json})
       .catch( err => {
         console.error('TRIAGE POST ERROR:');
         console.error(err);

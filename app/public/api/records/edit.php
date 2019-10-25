@@ -5,11 +5,7 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-<<<<<<< Updated upstream
-  'UPDATE person SET firstName = ?, lastName = ?, position= ?, station = ?, gender = ?, address = ?, workPhone = ?, mobilePhone = ?, radioNumber = ?'
-=======
   'UPDATE person SET firstName = ?, lastName = ?, position= ?, station = ?, gender = ?, address = ?, workPhone = ?, mobilePhone = ?, radioNumber = ? WHERE personId = ?'
->>>>>>> Stashed changes
 );
 
 //  DELETE FROM person WHERE personId = ?
@@ -23,7 +19,8 @@ $stmt->execute([
   $_POST['address'],
   $_POST['workPhone'],
   $_POST['mobilePhone'],
-  $_POST['radioNumber']
+  $_POST['radioNumber'],
+  $_POST['personId']
 ]);
 
 // Step 4: Output
