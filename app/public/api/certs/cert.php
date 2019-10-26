@@ -5,7 +5,7 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 // if (isset($_GET['personId'])) {
-  $stmt = $db->prepare('SELECT firstName, lastName, certType
+  $stmt = $db->prepare('SELECT firstName, lastName, pc.certId, certType
     FROM certification c, person p, personCert pc
     WHERE
       p.personId = pc.personId

@@ -32,8 +32,116 @@
 
 
     <!-- content goes here -->
+    <div id="certData">
+      <h2>Certifications</h2>
+      <table class="table table-sm table-hover">
+        <thead>
+          <tr>
+            <th>Certificate ID</th>
+            <th>Agency</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A</td>
+            <td>Fire Dept.</td>
+            <td>Firefighter II</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>CPR for Professional Rescuer/American Red Cross</td>
+            <td>CPR</td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td>Fire Dept.</td>
+            <td>HAZMAT</td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td>Fire Dept.</td>
+            <td>Extrication</td>
+          </tr>
+          <tr>
+            <td>E</td>
+            <td>DHS</td>
+            <td>EMT-Adv</td>
+          </tr>
+          <tr>
+            <td>F</td>
+            <td>Dept. of Public Safety</td>
+            <td>Due Regard</td>
+          </tr>
+          <tr>
+            <td>G</td>
+            <td>DHS</td>
+            <td>Paramedic</td>
+          </tr>
+          <tr>
+            <td>H</td>
+            <td>Ivy Technical College</td>
+            <td>Firefighter I</td>
+          </tr>
+          <tr>
+            <td>I</td>
+            <td>Athens Technical College</td>
+            <td>Firefighter I</td>
+          </tr>
+          <tr>
+            <td>J</td>
+            <td>Georgia POST Academy</td>
+            <td>POST</td>
+          </tr>
+          <tr>
+            <td>K</td>
+            <td>CPR for Healthcare Providers/American Heart Association</td>
+            <td>CPR</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div clas="container">
     <div id="certificate">
-      <h2>Certificates</h2>
+      <div>
+        <h2>Add Certification</h2>
+        <!-- <noscript>This page REQUIRES Javascript</noscript> -->
+        <form @submit.prevent="handleSubmit">
+          <div class="form-group row">
+            <label for="inputFirstName" class="col-sm-2 col-form-label">Member ID</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="ocfrFirstName" placeholder="ID" v-model="recordCert.personId">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputLastName" class="col-sm-2 col-form-label">Certificate ID</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="ocfrLastName" placeholder="Certificate ID" v-model="recordCert.certId">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputPosition" class="col-sm-2 col-form-label">Renew Date</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="ocfrPosition" placeholder="Renew Date" v-model="recordCert.renewDate">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputStation" class="col-sm-2 col-form-label">Expiration Date</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="ocfrStation" placeholder="Expiration Date" v-model="recordCert.expireDate">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">Add Certification</button>
+            </div>
+          </div>
+        </form>
+      </div>
       <div class="filter">
         <select v-model="filter.certType">
           <option value="">(all)</option>
@@ -53,60 +161,63 @@
             <tr>
               <th>First Name</th>
               <th>Last Name</th>
+              <th>Certificate ID</th>
               <th>Certification</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="c in certificates" @click="handleRowClick(c)" v-if="filter.certType=='' || c.certType==filter.certType">
               <td>{{ c.firstName }}</td>
               <td>{{ c.lastName }}</td>
+              <td>{{ c.certId}}</td>
               <td>{{ c.certType }}</td>
+              <td>
+                <form><input type="button" class="btn btn-primary" value="Delete" @click='handleDelete(c.certId)'></form>
+              </td>
             </tr>
           </tbody>
         </table>
-        <div>
-          <h2>Add Certification</h2>
-          <!-- <noscript>This page REQUIRES Javascript</noscript> -->
-          <form @submit.prevent="handleSubmit">
-            <div class="form-group row">
-              <label for="inputFirstName" class="col-sm-2 col-form-label">ID</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="ocfrFirstName" placeholder="ID" v-model="recordCert.personId">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="inputLastName" class="col-sm-2 col-form-label">Certificate ID</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="ocfrLastName" placeholder="Certificate ID" v-model="recordCert.certId">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="inputPosition" class="col-sm-2 col-form-label">Renew Date</label>
-              <div class="col-sm-10">
-                <input type="date" class="form-control" id="ocfrPosition" placeholder="Renew Date" v-model="recordCert.renewDate">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="inputStation" class="col-sm-2 col-form-label">Expiration Date</label>
-              <div class="col-sm-10">
-                <input type="date" class="form-control" id="ocfrStation" placeholder="Expiration Date" v-model="recordCert.expireDate">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Add Certification</button>
-              </div>
-            </div>
-          </form>
-        </div>
       </div>
+
+      <!-- <div id="editCert">
+              <noscript>This page REQUIRES Javascript</noscript>
+              <h2>Edit Certificates</h2>
+              <h8>Click on a member on the above table to make changes</h8>
+              <form @submit.prevent="handleSubmit">
+                <div class="form-group row">
+                  <label for="inputFirstName" class="col-sm-2 col-form-label">Member ID</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="editId" placeholder="ID" v-model="certificate.personId">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="inputLastName" class="col-sm-2 col-form-label">Renewal Date</label>
+                  <div class="col-sm-10">
+                    <input type="date" class="form-control" id="editRenew" placeholder="Renew Date" v-model="certificate.renewDate">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="inputLastName" class="col-sm-2 col-form-label">Expiration Date</label>
+                  <div class="col-sm-10">
+                    <input type="date" class="form-control" id="editExpire" placeholder="Expiration Date" v-model="certificate.expireDate">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Edit Certification</button>
+                  </div>
+                </div>
+              </form>
+            </div> -->
+        </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
     <script src="js/cert.js"></script>
+    <script src="js/editCert.js"></script>
   </body>
 
   <footer></footer>

@@ -38,9 +38,30 @@ var certApp = new Vue({
         // certification:''
       }
     },
-    // handleRowClick(person) {
-    //   patientTriageApp.patient = patient;
-    // }
+    handleDelete(certId) {
+      fetch('api/certs/delete.php', {
+        method:'POST',
+        body: JSON.stringify({"certId":certId}),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      .then( function(response) {
+        certApp.certificates = certApp.certificates.filter(function(el) {return el.certId != certId}
+      );
+      })
+      // .then( response => response.json() )
+      // .then( json => {ocfrApp.persons.push ( json[0])})
+      .catch( err=>{
+        console.error('RECORD POST ERROR:');
+        console.error(err);
+      });
+      this.handleReset();
+    },
+    handleRowClick(certificates) {
+      editCert.certificate = certificate;
+      console.log(certificates);
+    }
   }, // end methods
   created() {
     this.handleReset();
