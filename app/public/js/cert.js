@@ -4,7 +4,7 @@ var certApp = new Vue({
     certificates: [],
     recordCert: {},
     filter: {
-      certType: ''
+      firstName: ''
     }
   },
   methods: {

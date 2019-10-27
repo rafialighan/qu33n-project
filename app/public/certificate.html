@@ -142,7 +142,7 @@
           </div>
         </form>
       </div>
-      <div class="filter">
+      <!-- <div class="filter">
         <select v-model="filter.certType">
           <option value="">(all)</option>
           <option>CPR</option>
@@ -154,6 +154,12 @@
           <option>EMT-Adv</option>
           <option>Firefighter II</option>
           <option>Extrication</option>
+        </select>
+      </div> -->
+      <div class="filter">
+        <select v-model="filter.firstName">
+          <option value="">(all)</option>
+          <option  v-for="b in certificates">{{ b.firstName }}</option>
         </select>
       </div>
         <table id="certTable" class="table table-sm table-hover">
@@ -167,7 +173,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="c in certificates" @click="handleRowClick(c)" v-if="filter.certType=='' || c.certType==filter.certType">
+            <tr v-for="c in certificates" @click="handleRowClick(c)" v-if="filter.firstName=='' || c.firstName==filter.firstName">
               <td>{{ c.firstName }}</td>
               <td>{{ c.lastName }}</td>
               <td>{{ c.certId}}</td>
