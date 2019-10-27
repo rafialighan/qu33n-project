@@ -43,68 +43,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>A</td>
-            <td>Fire Dept.</td>
-            <td>Firefighter II</td>
+          <tr v-for="d in cert" @click="handleRowClick(d)">
+            <td>{{ d.certId }}</td>
+            <td>{{ d.agency }}</td>
+            <td>{{ d.certType }}</td>
           </tr>
-          <tr>
-            <td>B</td>
-            <td>CPR for Professional Rescuer/American Red Cross</td>
-            <td>CPR</td>
-          </tr>
-          <tr>
-            <td>C</td>
-            <td>Fire Dept.</td>
-            <td>HAZMAT</td>
-          </tr>
-          <tr>
-            <td>D</td>
-            <td>Fire Dept.</td>
-            <td>Extrication</td>
-          </tr>
-          <tr>
-            <td>E</td>
-            <td>DHS</td>
-            <td>EMT-Adv</td>
-          </tr>
-          <tr>
-            <td>F</td>
-            <td>Dept. of Public Safety</td>
-            <td>Due Regard</td>
-          </tr>
-          <tr>
-            <td>G</td>
-            <td>DHS</td>
-            <td>Paramedic</td>
-          </tr>
-          <tr>
-            <td>H</td>
-            <td>Ivy Technical College</td>
-            <td>Firefighter I</td>
-          </tr>
-          <tr>
-            <td>I</td>
-            <td>Athens Technical College</td>
-            <td>Firefighter I</td>
-          </tr>
-          <tr>
-            <td>J</td>
-            <td>Georgia POST Academy</td>
-            <td>POST</td>
-          </tr>
-          <tr>
-            <td>K</td>
-            <td>CPR for Healthcare Providers/American Heart Association</td>
-            <td>CPR</td>
-          </tr>
-        </tbody>
       </table>
     </div>
     <div clas="container">
     <div id="certificate">
       <div>
-        <h2>Add Certification</h2>
+        <h2>Add Member Certification</h2>
         <!-- <noscript>This page REQUIRES Javascript</noscript> -->
         <form @submit.prevent="handleSubmit">
           <div class="form-group row">
@@ -224,6 +173,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
     <script src="js/cert.js"></script>
     <script src="js/editCert.js"></script>
+    <script src='js/certData.js'></script>
       <!-- from http://tristen.ca/tablesort/demo/ -->
     <script src='js/sort.min.js'></script>
     <script>
