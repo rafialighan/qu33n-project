@@ -143,7 +143,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="c in certificates" @click="handleRowClick(c)" v-if="filter.firstName=='' || c.firstName==filter.firstName">
+            <tr v-for="c in certificates" v-if="filter.firstName=='' || c.firstName==filter.firstName">
               <td>{{ c.firstName }}</td>
               <td>{{ c.lastName }}</td>
               <td>{{ c.certId}}</td>

@@ -53,7 +53,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="p in persons" @click="handleRowClick(p)" v-if="filter.station=='' || p.station==filter.station">
+                <tr v-for="p in persons" v-if="filter.station=='' || p.station==filter.station">
                   <td>{{ p.firstName }}</td>
                   <td>{{ p.lastName }}</td>
                   <td>{{ p.station }}</td>

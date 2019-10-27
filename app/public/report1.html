@@ -59,7 +59,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="r in reports" @click="handleRowClick(r)" v-if="filter.certType=='' || r.certType==filter.certType">
+                <tr v-for="r in reports" v-if="filter.certType=='' || r.certType==filter.certType">
                   <td>{{ r.firstName }}</td>
                   <td>{{ r.lastName }}</td>
                   <td>{{ r.certType }}</td>
