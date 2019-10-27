@@ -50,8 +50,6 @@ var certApp = new Vue({
         certApp.certificates = certApp.certificates.filter(function(el) {return el.certId != certId}
       );
       })
-      // .then( response => response.json() )
-      // .then( json => {ocfrApp.persons.push ( json[0])})
       .catch( err=>{
         console.error('RECORD POST ERROR:');
         console.error(err);

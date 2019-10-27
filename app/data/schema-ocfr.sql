@@ -3,6 +3,7 @@ CREATE TABLE certification (
     agency VARCHAR (60),
     certType VARCHAR (60)
 );
+
 CREATE TABLE person (
 	personId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     firstName VARCHAR (60),
@@ -16,17 +17,16 @@ CREATE TABLE person (
     radioNumber VARCHAR (60) NOT NULL,
     isActive VARCHAR (1)
 );
+
 CREATE TABLE personCert (
 	personId INT NOT NULL AUTO_INCREMENT,
     certId VARCHAR(60),
     renewDate DATE,
     expireDate DATE,
     PRIMARY KEY (personId, certId),
-    FOREIGN KEY (personId) REFERENCES person(personId),
-    FOREIGN KEY (certId) REFERENCES certification(certId)
+    FOREIGN KEY (personId) REFERENCES person(personId) ON DELETE CASCADE,
+    FOREIGN KEY (certId) REFERENCES certification(certId) ON DELETE CASCADE
 );
-
-
 
 INSERT INTO person (personId, firstName, lastName, position, station, gender, address, workPhone, mobilePhone, radioNumber, isActive)
 	VALUES("1", "Kathryn", "Pryde", "Chief", "All",  "Female", "1123 Xavier School Drive, Wtkinsville, GA 30677", "707-555-1234", "707-555-2345", "A-1", "Y");

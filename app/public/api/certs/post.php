@@ -20,4 +20,3 @@ $stmt->execute([
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
 header('Location: ../certs/');
-// header('Location: ../records/?personId='.$personId);

@@ -45,6 +45,7 @@ var ocfrApp = new Vue({
         // certification:''
       }
     },
+    // Received help from Andrew Runyon
     handleDelete(personId) {
       fetch('api/records/delete.php', {
         method:'POST',
@@ -57,14 +58,13 @@ var ocfrApp = new Vue({
         ocfrApp.persons = ocfrApp.persons.filter(function(el) {return el.personId != personId}
       );
       })
-      // .then( response => response.json() )
-      // .then( json => {ocfrApp.persons.push ( json[0])})
       .catch( err=>{
         console.error('RECORD POST ERROR:');
         console.error(err);
       });
       this.handleReset();
     },
+    // Received help from Roman Arvizu
     handleRowClick(persons) {
       editApp.person = persons;
       console.log(persons);

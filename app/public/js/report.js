@@ -12,9 +12,6 @@ var report1App = new Vue({
       .then(response => response.json())
       .then(json => { report1App.reports = json })
      }
-    // formatLocalVisitDate(d) {
-    //   return moment.utc(d).local().format("HH:mm MMM Do");
-    // }
   },
   created() {
     this.fetchReport();

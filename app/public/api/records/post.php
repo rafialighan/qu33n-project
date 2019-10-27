@@ -21,10 +21,8 @@ $stmt->execute([
   $_POST['workPhone'],
   $_POST['mobilePhone'],
   $_POST['radioNumber']
-  // $_POST['isActive']
 ]);
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
 header('Location: ../records/');
-// header('Location: ../records/?personId='.$personId);

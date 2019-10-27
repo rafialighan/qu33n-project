@@ -12,11 +12,6 @@ $stmt = $db->prepare('SELECT * FROM person');
 $stmt->execute();
 $persons = $stmt->fetchAll();
 }
-// patientGuid VARCHAR(64) PRIMARY KEY,
-// firstName VARCHAR(64),
-// lastName VARCHAR(64),
-// dob DATE DEFAULT NULL,
-// sexAtBirth CHAR(1) DEFAULT ''
 
 // Step 3: Convert to JSON
 $json = json_encode($persons, JSON_PRETTY_PRINT);

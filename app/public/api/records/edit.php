@@ -8,8 +8,6 @@ $stmt = $db->prepare(
   'UPDATE person SET firstName = ?, lastName = ?, position= ?, station = ?, gender = ?, address = ?, workPhone = ?, mobilePhone = ?, radioNumber = ? WHERE personId = ?'
 );
 
-//  DELETE FROM person WHERE personId = ?
-
 $stmt->execute([
   $_POST['firstName'],
   $_POST['lastName'],
@@ -26,4 +24,3 @@ $stmt->execute([
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
 header('Location: ../records/');
-// header('Location: ../records/?personId='.$personId);
